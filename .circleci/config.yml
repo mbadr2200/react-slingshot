@@ -5,3 +5,11 @@ jobs:
   test:
   analyze:
 workflows:
+  default:
+    - build
+    - test:
+      requires:
+        - build
+    - analyze:
+      requires:
+        -test
